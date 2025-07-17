@@ -1,7 +1,8 @@
 :root {
-  --primary: #0077cc;
-  --background: #f4f4f4;
-  --white: #fff;
+  --primary: #1e90ff;
+  --dark: #1f1f1f;
+  --light: #ffffff;
+  --gray: #f4f4f4;
   --text: #333;
 }
 
@@ -14,91 +15,122 @@
 body {
   font-family: "Segoe UI", sans-serif;
   color: var(--text);
-  background-color: var(--background);
+  background-color: var(--light);
   line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .hero {
-  background-color: var(--primary);
-  color: var(--white);
+  background: var(--primary);
+  color: var(--light);
   padding: 60px 0;
   text-align: center;
 }
 
 .hero h1 {
   font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin: 10px 0 20px;
+  margin-bottom: 20px;
 }
 
-.hero nav ul {
+nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 0;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.hero nav a {
-  color: var(--white);
-  text-decoration: none;
+nav a {
+  color: white;
   font-weight: bold;
 }
 
-section {
-  padding: 60px 20px;
+.section {
+  background: var(--gray);
+  padding: 60px 0;
 }
 
-.about img {
-  width: 100%;
-  height: auto;
-  margin-top: 20px;
-  border-radius: 10px;
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
-.services .service-list {
+.cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  margin-top: 20px;
 }
 
-.services article {
-  background-color: var(--white);
+.card {
+  background: var(--light);
   padding: 20px;
-  flex: 1 1 250px;
   border-left: 5px solid var(--primary);
+  flex: 1 1 280px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-.contact p {
-  margin: 10px 0;
+.testimonials blockquote {
+  font-style: italic;
+  background: var(--light);
+  padding: 20px;
+  border-left: 5px solid var(--primary);
+  margin: auto;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.testimonials footer {
+  margin-top: 10px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.contact a.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: #222;
-  color: var(--white);
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 30px 20px;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
-  .services .service-list {
+
+  nav ul {
     flex-direction: column;
-  }
-  .hero nav ul {
-    flex-direction: column;
+    gap: 10px;
   }
 }
